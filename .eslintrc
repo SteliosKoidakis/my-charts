@@ -1,0 +1,90 @@
+{
+    "root": true,
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "extends": [
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "airbnb-base"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "sort-imports": 0,
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "js": "never",
+          "json": "never"
+        }
+      ],
+      "import/prefer-default-export": 0,
+      "no-alert": 0,
+      "import/default": 0,
+      "import/no-named-as-default": 0,
+      "import/no-named-default": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/newline-after-import": 0,
+      "import/no-duplicates": "error",
+      "import/no-self-import": "error",
+      "max-len": [
+        "warn",
+        {
+          "code": 140,
+          "ignoreUrls": true,
+          "ignoreComments": true,
+          "ignoreTemplateLiterals": true,
+          "ignoreStrings": true,
+          "ignorePattern": "d=\"([sS]*?)"
+        }
+      ],
+      "nonblock-statement-body-position": ["error", "beside"],
+      "no-multiple-empty-lines": [
+        "error",
+        {
+          "max": 1
+        }
+      ],
+      "no-empty-function": [
+        "error",
+        {
+          "allow": ["arrowFunctions", "functions", "methods"]
+        }
+      ],
+      "comma-dangle": [
+        "error",
+        {
+          "arrays": "always-multiline",
+          "objects": "always-multiline",
+          "imports": "always-multiline",
+          "exports": "never",
+          "functions": "always-multiline"
+        }
+      ],
+      "object-curly-spacing": ["error", "always"],
+      "object-curly-newline": [
+        "error",
+        {
+          "ObjectPattern": { "multiline": true, "minProperties": 4 },
+          "ImportDeclaration": { "multiline": true, "minProperties": 4 },
+          "ExportDeclaration": { "multiline": true, "minProperties": 4 }
+        }
+      ],
+      "object-property-newline": [
+        "error",
+        { "allowAllPropertiesOnSameLine": true }
+      ],
+      "no-console": [
+        "error",
+        {
+          "allow": ["info"]
+        }
+      ],
+      "no-underscore-dangle": [0],
+      "operator-linebreak": ["error", "before"],
+    }
+  }
