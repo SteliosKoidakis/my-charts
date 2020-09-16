@@ -39,6 +39,7 @@ class ChartView extends HTMLElement {
           ${this.revenewChart.tabletPercentage}
           ${this.revenewChart.smartphonePercentage}
           <donat-chart-component
+            data=${this.revenewChart.data}
             smartphonePercentage=${this.revenewChart.smartphonePercentage}
             tabletPercentage=${this.revenewChart.tabletPercentage}
             smartphoneColor="#38AF1E"
@@ -51,6 +52,7 @@ class ChartView extends HTMLElement {
           ${this.impresionsChart.tabletPercentage}
           ${this.impresionsChart.smartphonePercentage}
           <donat-chart-component
+            data=${this.impresionsChart.data}
             smartphonePercentage=${this.impresionsChart.smartphonePercentage}
             tabletPercentage=${this.impresionsChart.tabletPercentage}
             smartphoneColor="#2945BB"
@@ -63,6 +65,7 @@ class ChartView extends HTMLElement {
           ${this.visitsChart.tabletPercentage}
           ${this.visitsChart.smartphonePercentage}
           <donat-chart-component
+            data=${this.visitsChart.data}
             smartphonePercentage=${this.visitsChart.smartphonePercentage}
             tabletPercentage=${this.visitsChart.tabletPercentage}
             smartphoneColor="#E55039"

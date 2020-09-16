@@ -20,6 +20,7 @@ class DonutChartComponent extends HTMLElement {
       'smartphoneColor',
       'tabletColor',
       'total',
+      'data',
     ];
   }
 
@@ -43,6 +44,10 @@ class DonutChartComponent extends HTMLElement {
     return parseFloat(this.getAttribute('total'));
   }
 
+  get data() {
+    return this.getAttribute('data').split(',');
+  }
+
   async connectedCallback() {
     this.renderTemplate();
     renderDonutChart({
@@ -60,7 +65,7 @@ class DonutChartComponent extends HTMLElement {
       },
     });
     renderLinarChart({
-      data: [1, 1, 3, 4, 5, 3, 4],
+      data: this.data,
       color: this.smartphoneColor,
       element: {
         shadow: this.shadow,
