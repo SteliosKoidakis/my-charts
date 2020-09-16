@@ -5,15 +5,11 @@ describe('Given main index file', () => {
     }));
     await import('./index.js');
   });
-  it('test', () => {
-    expect(1 + 1).toEqual(2);
-  });
   it('Then it should instantiate ChartView', () => {
-    expect(1 + 1).toEqual(2);
+    // TBD
   });
+  // check if can be done
   it('And it should trigger getElementById with "main" paramter', () => {
-    console.log('tes1');
-
     expect(document.getElementById).toHaveBeenCalledWith('main');
   });
 });

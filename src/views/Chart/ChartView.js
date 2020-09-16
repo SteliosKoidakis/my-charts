@@ -1,4 +1,5 @@
 import ChartModel from '~/model/Chart/ChartModel';
+import ChartViewStyle from './ChartView.scss';
 
 class ChartView extends HTMLElement {
   constructor() {
@@ -6,22 +7,32 @@ class ChartView extends HTMLElement {
     this.shadow = this.attachShadow({
       mode: 'open',
     });
+
     this.revenewChart = new ChartModel('revenewChart');
     this.impresionsChart = new ChartModel('impresionsChart');
     this.visitsChart = new ChartModel('visitsChart');
   }
 
+  attachStyles() {
+    const style = document.createElement('style');
+    style.textContent = ChartViewStyle;
+    this.shadow.appendChild(style);
+  }
+
   async connectedCallback() {
+    await this.getChartsInformation();
+    this.renderTemplate();
+    this.attachStyles();
+  }
+
+  async getChartsInformation() {
     await this.revenewChart.getChartData();
     await this.impresionsChart.getChartData();
     await this.visitsChart.getChartData();
-    this.renderTemplate();
   }
 
   renderTemplate() {
     const template = `
-      <style>
-      </style>
       <div div class="ChartView">
         <div class="ChartView__item">
           ${this.revenewChart.total}
