@@ -1,0 +1,15 @@
+.DonutChartComponent {
+  position: relative;
+
+  &__title,
+  &__total {
+    text-align: center;
+    padding-bottom: 5px;
+  }
+
+  &__line-chart {
+    position: absolute;
+    bottom: -30px;
+    left: 25px;
+  }
+}

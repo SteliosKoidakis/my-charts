@@ -1,7 +1,9 @@
 import {
+  attachStyles,
   renderDonutChart,
   renderLinarChart,
-} from '~/utils/chartGenerators';
+} from '~/utils';
+import DonutChartComponentStyles from './DonutChartComponent.scss';
 const donuChartClass = 'donuChart';
 const lineChartClass = 'lineChart';
 
@@ -20,6 +22,7 @@ class DonutChartComponent extends HTMLElement {
       'smartphoneColor',
       'tabletColor',
       'total',
+      'title',
       'data',
     ];
   }
@@ -40,6 +43,10 @@ class DonutChartComponent extends HTMLElement {
     return this.getAttribute('smartphoneColor');
   }
 
+  get title() {
+    return this.getAttribute('title');
+  }
+
   get total() {
     return parseFloat(this.getAttribute('total'));
   }
@@ -50,6 +57,7 @@ class DonutChartComponent extends HTMLElement {
 
   async connectedCallback() {
     this.renderTemplate();
+    attachStyles(this.shadow, DonutChartComponentStyles);
     renderDonutChart({
       smartphone: {
         smartphonePercentage: this.smartphonePercentage,
@@ -76,8 +84,11 @@ class DonutChartComponent extends HTMLElement {
 
   renderTemplate() {
     const template = `
-      <div class="${donuChartClass}">
-        <div class="${lineChartClass}"></div>
+      <div class="DonutChartComponent ${donuChartClass}">
+        <div class="DonutChartComponent__line-chart ${lineChartClass}">
+          <div class="DonutChartComponent__title">${this.title}</div>
+          <div class="DonutChartComponent__total">${this.total}</div>
+        </div>
       </div>
     `;
 

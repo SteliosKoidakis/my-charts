@@ -1,5 +1,6 @@
 import ChartModel from '~/model/Chart/ChartModel';
-import ChartViewStyle from './ChartView.scss';
+import { attachStyles } from '~/utils';
+import ChartViewStyles from './ChartView.scss';
 
 class ChartView extends HTMLElement {
   constructor() {
@@ -13,16 +14,10 @@ class ChartView extends HTMLElement {
     this.visitsChart = new ChartModel('visitsChart');
   }
 
-  attachStyles() {
-    const style = document.createElement('style');
-    style.textContent = ChartViewStyle;
-    this.shadow.appendChild(style);
-  }
-
   async connectedCallback() {
     await this.getChartsInformation();
     this.renderTemplate();
-    this.attachStyles();
+    attachStyles(this.shadow, ChartViewStyles);
   }
 
   async getChartsInformation() {
@@ -43,6 +38,7 @@ class ChartView extends HTMLElement {
             smartphonePercentage=${this.revenewChart.smartphonePercentage}
             tabletPercentage=${this.revenewChart.tabletPercentage}
             smartphoneColor="#38AF1E"
+            title="REVENUE"
             tabletColor="#44DF22"
             total=${this.revenewChart.total}
           />
@@ -56,6 +52,7 @@ class ChartView extends HTMLElement {
             smartphonePercentage=${this.impresionsChart.smartphonePercentage}
             tabletPercentage=${this.impresionsChart.tabletPercentage}
             smartphoneColor="#2945BB"
+            title="IMPRESIONS"
             tabletColor="#4DD4DD"
             total=${this.impresionsChart.total}
           />
@@ -69,6 +66,7 @@ class ChartView extends HTMLElement {
             smartphonePercentage=${this.visitsChart.smartphonePercentage}
             tabletPercentage=${this.visitsChart.tabletPercentage}
             smartphoneColor="#E55039"
+            title="VISITS"
             tabletColor="#E5C839"
             total=${this.visitsChart.total}
           />
