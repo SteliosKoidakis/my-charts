@@ -93,6 +93,7 @@ class DonutChartComponent extends HTMLElement {
       element: {
         shadow: this.shadow,
         class: lineChartClass,
+        backgroundClass: `DonutChartComponent__background-${this.title.toLowerCase()}`,
       },
     });
   }

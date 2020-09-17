@@ -24,8 +24,8 @@
 
   &__line-chart {
     position: absolute;
-    bottom: 25px;
-    left: 65px;
+    bottom: 40px;
+    left: 80px;
   }
 
   &__info {
@@ -35,5 +35,17 @@
 
   &__value {
     color: lightgrey;
+  }
+  &__background {
+
+    &-revenue {
+      fill: #e4fcde;
+    }
+    &-impresions {
+      fill: #dbfdff;
+    }
+    &-visits {
+      fill: #fff0ed;
+    }
   }
 }

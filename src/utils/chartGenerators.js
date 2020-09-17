@@ -1,7 +1,9 @@
 import { select } from 'd3-selection';
-import { scaleOrdinal, scaleTime, scaleLinear } from 'd3-scale';
-import { arc, pie, line } from 'd3-shape';
-import { max, extent } from 'd3-array';
+import { scaleOrdinal, scaleLinear, scale } from 'd3-scale';
+import {
+  arc, pie, line, area,
+} from 'd3-shape';
+import { max } from 'd3-array';
 
 const renderDonutChart = ({
   smartphone,
@@ -17,8 +19,8 @@ const renderDonutChart = ({
     value: tablet.value,
   },
   ];
-  const width = 150;
-  const height = 150;
+  const width = 180;
+  const height = 180;
   const thickness = 8;
   const radius = Math.min(width, height) / 2;
   const color = scaleOrdinal([smartphone.smartphoneColor, tablet.tabletColor]);
@@ -57,43 +59,40 @@ const renderLinarChart = ({
   color,
   element,
 }) => {
-  const margin = {
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-  };
-
   const svg = select(element.shadow)
     .select(`.${element.class}`)
     .append('svg')
-    .attr('width', 100 + margin.left + margin.right)
+    .attr('width', 100)
     .attr('height', 50)
-    .append('g')
-    .attr('transform', `translate(${margin.left},${margin.top})`);
+    .append('g');
 
-  const x = scaleTime()
-    .domain(extent(data, (value, index) => index))
+  const x = scaleLinear()
+    .domain([0, max(data, (value, index) => index)])
     .range([0, 100]);
-  svg.append('g');
 
   const y = scaleLinear()
-    .domain([0, max(data, (value) => +value)])
-    .range([100, 0]);
-  svg.append('g');
+    .domain([0, max(data, (value) => value)])
+    .range([50, 0]);
 
-  svg
-    .append('path')
+  const chartArea = area()
+    .x((value, index) => x(index))
+    .y0(y(0))
+    .y1((value) => y(value));
+
+  svg.append('path')
     .datum(data)
     .attr('fill', color)
     .attr('stroke', color)
     .attr('stroke-width', 0.8)
-    .attr(
-      'd',
-      line()
-        .x((value, index) => x(index))
-        .y((value) => y(value)),
-    );
+    .attr('d', line()
+      .x((value, index) => x(index))
+      .y((value) => y(value)));
+
+  svg
+    .append('path')
+    .datum(data)
+    .attr('class', element.backgroundClass)
+    .attr('d', chartArea);
 };
 
 export {
