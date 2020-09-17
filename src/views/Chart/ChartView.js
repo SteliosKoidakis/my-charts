@@ -30,13 +30,13 @@ class ChartView extends HTMLElement {
     const template = `
       <div div class="ChartView">
         <div class="ChartView__item">
-          ${this.revenewChart.total}
-          ${this.revenewChart.tabletPercentage}
-          ${this.revenewChart.smartphonePercentage}
           <donat-chart-component
             data=${this.revenewChart.data}
             smartphonePercentage=${this.revenewChart.smartphonePercentage}
             tabletPercentage=${this.revenewChart.tabletPercentage}
+            smartphone=${this.revenewChart.smartphone}
+            tablet=${this.revenewChart.tablet}
+            currency="€"
             smartphoneColor="#38AF1E"
             title="REVENUE"
             tabletColor="#44DF22"
@@ -44,13 +44,12 @@ class ChartView extends HTMLElement {
           />
         </div>
         <div class="ChartView__item">
-          ${this.impresionsChart.total}
-          ${this.impresionsChart.tabletPercentage}
-          ${this.impresionsChart.smartphonePercentage}
           <donat-chart-component
             data=${this.impresionsChart.data}
             smartphonePercentage=${this.impresionsChart.smartphonePercentage}
             tabletPercentage=${this.impresionsChart.tabletPercentage}
+            smartphone=${this.impresionsChart.smartphone}
+            tablet=${this.impresionsChart.tablet}
             smartphoneColor="#2945BB"
             title="IMPRESIONS"
             tabletColor="#4DD4DD"
@@ -58,13 +57,12 @@ class ChartView extends HTMLElement {
           />
         </div>
         <div class="ChartView__item">
-          ${this.visitsChart.total}
-          ${this.visitsChart.tabletPercentage}
-          ${this.visitsChart.smartphonePercentage}
           <donat-chart-component
             data=${this.visitsChart.data}
             smartphonePercentage=${this.visitsChart.smartphonePercentage}
             tabletPercentage=${this.visitsChart.tabletPercentage}
+            smartphone=${this.visitsChart.smartphone}
+            tablet=${this.visitsChart.tablet}
             smartphoneColor="#E55039"
             title="VISITS"
             tabletColor="#E5C839"

@@ -1,2 +1,9 @@
 .ChartView {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+
+  &__item {
+    padding: 0 20px;
+  }
 }

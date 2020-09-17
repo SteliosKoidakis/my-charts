@@ -4,7 +4,7 @@ import {
   renderLinarChart,
 } from '~/utils';
 import DonutChartComponentStyles from './DonutChartComponent.scss';
-const donuChartClass = 'donuChart';
+const donutChartClass = 'donutChart';
 const lineChartClass = 'lineChart';
 
 class DonutChartComponent extends HTMLElement {
@@ -17,8 +17,11 @@ class DonutChartComponent extends HTMLElement {
 
   static get observedAttributes() {
     return [
+      'currency',
       'smartphonePercentage',
       'tabletPercentage',
+      'smartphone',
+      'tablet',
       'smartphoneColor',
       'tabletColor',
       'total',
@@ -35,8 +38,20 @@ class DonutChartComponent extends HTMLElement {
     return parseFloat(this.getAttribute('smartphonePercentage'));
   }
 
+  get tablet() {
+    return parseFloat(this.getAttribute('tablet'));
+  }
+
+  get smartphone() {
+    return parseFloat(this.getAttribute('smartphone'));
+  }
+
   get tabletColor() {
     return this.getAttribute('tabletColor');
+  }
+
+  get currency() {
+    return this.getAttribute('currency') || '';
   }
 
   get smartphoneColor() {
@@ -60,16 +75,16 @@ class DonutChartComponent extends HTMLElement {
     attachStyles(this.shadow, DonutChartComponentStyles);
     renderDonutChart({
       smartphone: {
-        smartphonePercentage: this.smartphonePercentage,
+        value: this.smartphone,
         smartphoneColor: this.smartphoneColor,
       },
       tablet: {
-        tabletPercentage: this.tabletPercentage,
+        value: this.tablet,
         tabletColor: this.tabletColor,
       },
       element: {
         shadow: this.shadow,
-        class: donuChartClass,
+        class: donutChartClass,
       },
     });
     renderLinarChart({
@@ -84,10 +99,28 @@ class DonutChartComponent extends HTMLElement {
 
   renderTemplate() {
     const template = `
-      <div class="DonutChartComponent ${donuChartClass}">
-        <div class="DonutChartComponent__line-chart ${lineChartClass}">
-          <div class="DonutChartComponent__title">${this.title}</div>
-          <div class="DonutChartComponent__total">${this.total}</div>
+      <div class="DonutChartComponent">
+        <div div class="DonutChartComponent__donut ${donutChartClass}">
+          <div class="DonutChartComponent__line-chart ${lineChartClass}">
+            <strong class="DonutChartComponent__title">${this.title}</strong>
+            <strong class="DonutChartComponent__total">${this.total}</strong>
+          </div>
+        </div>
+        <div class="DonutChartComponent__info">
+          <div class="DonutChartComponent__tablet-info" >
+            <strong style="color:${this.tabletColor}">Tablet</strong>
+            <div>
+              <span>${this.tabletPercentage}% </span>
+              <span class="DonutChartComponent__value">${this.tablet}${this.currency}</span>
+             </div>
+          </div>
+          <div>
+             <strong style="color:${this.smartphoneColor}">Smartphone</strong>
+             <div>
+              <span>${this.smartphonePercentage}% </span>
+              <span class="DonutChartComponent__value">${this.smartphone}${this.currency}</span>
+             </div>
+          </div>
         </div>
       </div>
     `;

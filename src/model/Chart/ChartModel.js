@@ -11,11 +11,11 @@ class ChartModel {
   }
 
   get tabletPercentage() {
-    return this.tablet / this.total;
+    return (this.tablet / this.total) * 100;
   }
 
   get smartphonePercentage() {
-    return this.smartphone / this.total;
+    return (this.smartphone / this.total) * 100;
   }
 
   async getChartData() {

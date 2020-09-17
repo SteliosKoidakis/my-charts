@@ -10,11 +10,11 @@ const renderDonutChart = ({
 }) => {
   const data = [{
     name: 'smartphone',
-    value: smartphone.smartphonePercentage,
+    value: smartphone.value,
   },
   {
     name: 'tablet',
-    value: tablet.tabletPercentage,
+    value: tablet.value,
   },
   ];
   const width = 150;
@@ -68,12 +68,12 @@ const renderLinarChart = ({
     .select(`.${element.class}`)
     .append('svg')
     .attr('width', 100 + margin.left + margin.right)
-    .attr('height', 100 + margin.top + margin.bottom)
+    .attr('height', 50)
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
   const x = scaleTime()
-    .domain(extent(data, (value) => value))
+    .domain(extent(data, (value, index) => index))
     .range([0, 100]);
   svg.append('g');
 
@@ -85,9 +85,9 @@ const renderLinarChart = ({
   svg
     .append('path')
     .datum(data)
-    .attr('fill', 'none')
+    .attr('fill', color)
     .attr('stroke', color)
-    .attr('stroke-width', 1.5)
+    .attr('stroke-width', 0.8)
     .attr(
       'd',
       line()

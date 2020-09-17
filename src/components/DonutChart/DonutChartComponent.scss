@@ -1,15 +1,39 @@
 .DonutChartComponent {
   position: relative;
+  
+  &__donut {
+    position: relative;
+    padding: 0 40px;
+  }
+
+  &__title {
+    color: grey;
+    font-size: 15px;
+  }
+
+  &__total {
+    font-size: 18px;
+  }
 
   &__title,
   &__total {
-    text-align: center;
+    display: block;
     padding-bottom: 5px;
+    text-align: center;
   }
 
   &__line-chart {
     position: absolute;
-    bottom: -30px;
-    left: 25px;
+    bottom: 25px;
+    left: 65px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__value {
+    color: lightgrey;
   }
 }
