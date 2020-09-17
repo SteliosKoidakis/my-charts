@@ -1,5 +1,5 @@
 import { select } from 'd3-selection';
-import { scaleOrdinal, scaleLinear, scale } from 'd3-scale';
+import { scaleOrdinal, scaleLinear } from 'd3-scale';
 import {
   arc, pie, line, area,
 } from 'd3-shape';
@@ -81,7 +81,7 @@ const renderLinarChart = ({
 
   svg.append('path')
     .datum(data)
-    .attr('fill', color)
+    .attr('fill', 'none')
     .attr('stroke', color)
     .attr('stroke-width', 0.8)
     .attr('d', line()

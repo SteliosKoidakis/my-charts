@@ -28,8 +28,14 @@ class ChartView extends HTMLElement {
 
   renderTemplate() {
     const template = `
-      <div div class="ChartView">
-        <div class="ChartView__item">
+    <div class="ChartView">
+      <div class="ChartView__navigation">
+        <a href="#slide-1"></a>
+        <a href="#slide-2"></a>
+        <a href="#slide-3"></a>
+      </div>
+      <div class="ChartView__slides">
+        <div class="ChartView__item" id="slide-1">
           <donat-chart-component
             data=${this.revenewChart.data}
             smartphonePercentage=${this.revenewChart.smartphonePercentage}
@@ -43,7 +49,7 @@ class ChartView extends HTMLElement {
             total=${this.revenewChart.total}
           />
         </div>
-        <div class="ChartView__item">
+        <div class="ChartView__item" id="slide-2">
           <donat-chart-component
             data=${this.impresionsChart.data}
             smartphonePercentage=${this.impresionsChart.smartphonePercentage}
@@ -56,7 +62,7 @@ class ChartView extends HTMLElement {
             total=${this.impresionsChart.total}
           />
         </div>
-        <div class="ChartView__item">
+        <div class="ChartView__item" id="slide-2">
           <donat-chart-component
             data=${this.visitsChart.data}
             smartphonePercentage=${this.visitsChart.smartphonePercentage}
@@ -70,6 +76,9 @@ class ChartView extends HTMLElement {
           />
         </div>
       </div>
+    </div>
+      
+      
       `;
 
     this.shadow.innerHTML = template;
