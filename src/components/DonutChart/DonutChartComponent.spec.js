@@ -6,6 +6,7 @@ import {
 } from '~/utils';
 
 jest.mock('~/utils', () => ({
+  formatNumber: jest.fn(),
   renderStyles: jest.fn(),
   renderDonutChart: jest.fn(),
   renderLinarChart: jest.fn(),
@@ -106,7 +107,7 @@ describe('Given component DonutChartComponent', () => {
   });
   describe('Given smartphoneColor getter', () => {
     describe('When smartphoneColor attribute has any value', () => {
-      it('Then it should return it in string format', () => {
+      it('Then it should return it in a string format', () => {
         wrapper.setAttribute('smartphoneColor', false);
         expect(typeof wrapper.smartphoneColor).toBe('string');
         wrapper.setAttribute('smartphoneColor', {});
@@ -116,7 +117,7 @@ describe('Given component DonutChartComponent', () => {
   });
   describe('Given title getter', () => {
     describe('When title attribute has any value', () => {
-      it('Then it should return it in string format', () => {
+      it('Then it should return it in a string format', () => {
         wrapper.setAttribute('title', false);
         expect(typeof wrapper.title).toBe('string');
         wrapper.setAttribute('title', {});
@@ -125,16 +126,10 @@ describe('Given component DonutChartComponent', () => {
     });
   });
   describe('Given data getter', () => {
-    describe('When data attribute is any value', () => {
-      it('Then it should return an array with value split by comma', () => {
+    describe('When data attribute has any value', () => {
+      it('Then it should return an array with values split by comma', () => {
         wrapper.setAttribute('data', false);
         expect(wrapper.data).toStrictEqual(['false']);
-      });
-    });
-    describe('When total attribute is a number in a string format', () => {
-      xit('Then it should return the number', () => {
-        wrapper.setAttribute('total', '2');
-        expect(wrapper.total).toBe(2);
       });
     });
   });

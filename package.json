@@ -11,7 +11,8 @@
     "lint": "node_modules/.bin/esw webpack.config.* src --color",
     "lint:watch": "yarn run lint -- --watch",
     "unit": "yarn jest",
-    "unit-watch": "yarn unit --watch"
+    "unit:watch": "yarn unit --watch",
+    "unit:coverage": "yarn unit --coverage"
   },
   "keywords": [
     "es6"
@@ -29,9 +30,9 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-standard": "14.1.1",
     "eslint-friendly-formatter": "4.0.1",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-loader": "4.0.0",
-    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "23.8.2",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",

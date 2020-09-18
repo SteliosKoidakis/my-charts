@@ -1,4 +1,5 @@
 import {
+  formatNumber,
   renderStyles,
   renderDonutChart,
   renderLinarChart,
@@ -104,7 +105,7 @@ class DonutChartComponent extends HTMLElement {
         <div div class="DonutChartComponent__donut ${donutChartClass}">
           <div class="DonutChartComponent__line-chart ${lineChartClass}">
             <strong class="DonutChartComponent__title">${this.title}</strong>
-            <strong class="DonutChartComponent__total">${this.total}</strong>
+            <strong class="DonutChartComponent__total">${formatNumber(this.total)}</strong>
           </div>
         </div>
         <div class="DonutChartComponent__info">
@@ -112,14 +113,14 @@ class DonutChartComponent extends HTMLElement {
             <strong style="color:${this.tabletColor}">Tablet</strong>
             <div>
               <span>${this.tabletPercentage}% </span>
-              <span class="DonutChartComponent__value">${this.tablet}${this.currency}</span>
+              <span class="DonutChartComponent__value">${formatNumber(this.tablet)}${this.currency}</span>
              </div>
           </div>
           <div>
              <strong style="color:${this.smartphoneColor}">Smartphone</strong>
              <div>
               <span>${this.smartphonePercentage}% </span>
-              <span class="DonutChartComponent__value">${this.smartphone}${this.currency}</span>
+              <span class="DonutChartComponent__value">${formatNumber(this.smartphone)}${this.currency}</span>
              </div>
           </div>
         </div>

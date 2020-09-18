@@ -6,7 +6,7 @@ exports[`Given component DonutChartComponent Given method renderTemplate When is
         <div div=\\"\\" class=\\"DonutChartComponent__donut donutChart\\">
           <div class=\\"DonutChartComponent__line-chart lineChart\\">
             <strong class=\\"DonutChartComponent__title\\"></strong>
-            <strong class=\\"DonutChartComponent__total\\">0</strong>
+            <strong class=\\"DonutChartComponent__total\\">undefined</strong>
           </div>
         </div>
         <div class=\\"DonutChartComponent__info\\">
@@ -14,14 +14,14 @@ exports[`Given component DonutChartComponent Given method renderTemplate When is
             <strong style=\\"color:null\\">Tablet</strong>
             <div>
               <span>0% </span>
-              <span class=\\"DonutChartComponent__value\\">0</span>
+              <span class=\\"DonutChartComponent__value\\">undefined</span>
              </div>
           </div>
           <div>
              <strong style=\\"color: \\">Smartphone</strong>
              <div>
               <span>0% </span>
-              <span class=\\"DonutChartComponent__value\\">0</span>
+              <span class=\\"DonutChartComponent__value\\">undefined</span>
              </div>
           </div>
         </div>

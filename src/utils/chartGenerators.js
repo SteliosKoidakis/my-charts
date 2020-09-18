@@ -5,18 +5,23 @@ import {
 } from 'd3-shape';
 import { max } from 'd3-array';
 
-const renderDonutChart = ({
-  smartphone,
-  tablet,
-  element,
-}) => {
+const renderDonutChart = (information) => {
+  if (!information) return;
+
+  const {
+    smartphone,
+    tablet,
+    element,
+  } = information;
+  if (!element) return;
+
   const data = [{
     name: 'smartphone',
-    value: smartphone.value,
+    value: smartphone && smartphone.value,
   },
   {
     name: 'tablet',
-    value: tablet.value,
+    value: tablet && tablet.value,
   },
   ];
   const width = 180;
@@ -54,11 +59,17 @@ const renderDonutChart = ({
     .attr('fill', (d, i) => color(i));
 };
 
-const renderLinarChart = ({
-  data,
-  color,
-  element,
-}) => {
+const renderLinarChart = (information) => {
+  if (!information) return;
+
+  const {
+    color,
+    data,
+    element,
+  } = information;
+
+  if (!element) return;
+
   const svg = select(element.shadow)
     .select(`.${element.class}`)
     .append('svg')
