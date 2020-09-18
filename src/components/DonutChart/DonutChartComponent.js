@@ -1,5 +1,5 @@
 import {
-  attachStyles,
+  renderStyles,
   renderDonutChart,
   renderLinarChart,
 } from '~/utils';
@@ -31,19 +31,19 @@ class DonutChartComponent extends HTMLElement {
   }
 
   get tabletPercentage() {
-    return parseFloat(this.getAttribute('tabletPercentage'));
+    return parseFloat(this.getAttribute('tabletPercentage')) || 0;
   }
 
   get smartphonePercentage() {
-    return parseFloat(this.getAttribute('smartphonePercentage'));
+    return parseFloat(this.getAttribute('smartphonePercentage')) || 0;
   }
 
   get tablet() {
-    return parseFloat(this.getAttribute('tablet'));
+    return parseFloat(this.getAttribute('tablet')) || 0;
   }
 
   get smartphone() {
-    return parseFloat(this.getAttribute('smartphone'));
+    return parseFloat(this.getAttribute('smartphone')) || 0;
   }
 
   get tabletColor() {
@@ -55,24 +55,24 @@ class DonutChartComponent extends HTMLElement {
   }
 
   get smartphoneColor() {
-    return this.getAttribute('smartphoneColor');
+    return this.getAttribute('smartphoneColor') || ' ';
   }
 
   get title() {
-    return this.getAttribute('title');
+    return this.getAttribute('title') || '';
   }
 
   get total() {
-    return parseFloat(this.getAttribute('total'));
+    return parseFloat(this.getAttribute('total')) || 0;
   }
 
   get data() {
-    return this.getAttribute('data').split(',');
+    return this.getAttribute('data') && this.getAttribute('data').split(',');
   }
 
   async connectedCallback() {
     this.renderTemplate();
-    attachStyles(this.shadow, DonutChartComponentStyles);
+    renderStyles(this.shadow, DonutChartComponentStyles);
     renderDonutChart({
       smartphone: {
         value: this.smartphone,

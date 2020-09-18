@@ -1,8 +1,8 @@
 import { renderDonutChart, renderLinarChart } from './chartGenerators';
-import { attachStyles } from './styles';
+import { renderStyles } from './styles';
 
 export {
-  attachStyles,
+  renderStyles,
   renderDonutChart,
   renderLinarChart
 };

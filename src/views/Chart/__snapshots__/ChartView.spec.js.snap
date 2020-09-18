@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given component ChartView Given method renderTemplate When is called Then it should render the correct template 1`] = `
+"
+    <div class=\\"ChartView\\">
+      
+      <div class=\\"ChartView__navigation\\">
+        <a href=\\"#slide-1\\"></a>
+        <a href=\\"#slide-2\\"></a>
+        <a href=\\"#slide-3\\"></a>
+      </div>
+      <div class=\\"ChartView__slides\\">
+        <div class=\\"ChartView__item\\" id=\\"slide-1\\">
+          <donat-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" currency=\\"€\\" smartphonecolor=\\"#38AF1E\\" title=\\"REVENUE\\" tabletcolor=\\"#44DF22\\" total=\\"0\\">
+        </donat-chart-component></div>
+        <div class=\\"ChartView__item\\" id=\\"slide-2\\">
+          <donat-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" smartphonecolor=\\"#2945BB\\" title=\\"IMPRESIONS\\" tabletcolor=\\"#4DD4DD\\" total=\\"0\\">
+        </donat-chart-component></div>
+        <div class=\\"ChartView__item\\" id=\\"slide-2\\">
+          <donat-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" smartphonecolor=\\"#E55039\\" title=\\"VISITS\\" tabletcolor=\\"#E5C839\\" total=\\"0\\">
+        </donat-chart-component></div>
+      </div>
+    </div>
+      "
+`;

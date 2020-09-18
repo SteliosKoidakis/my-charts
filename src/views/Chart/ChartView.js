@@ -1,5 +1,5 @@
 import ChartModel from '~/model/Chart/ChartModel';
-import { attachStyles } from '~/utils';
+import { renderStyles } from '~/utils';
 import ChartViewStyles from './ChartView.scss';
 
 class ChartView extends HTMLElement {
@@ -17,7 +17,7 @@ class ChartView extends HTMLElement {
   async connectedCallback() {
     await this.getChartsInformation();
     this.renderTemplate();
-    attachStyles(this.shadow, ChartViewStyles);
+    renderStyles(this.shadow, ChartViewStyles);
   }
 
   async getChartsInformation() {
@@ -29,6 +29,7 @@ class ChartView extends HTMLElement {
   renderTemplate() {
     const template = `
     <div class="ChartView">
+      </chart-navigation-component>
       <div class="ChartView__navigation">
         <a href="#slide-1"></a>
         <a href="#slide-2"></a>
@@ -77,8 +78,6 @@ class ChartView extends HTMLElement {
         </div>
       </div>
     </div>
-      
-      
       `;
 
     this.shadow.innerHTML = template;

@@ -10,7 +10,8 @@
     "build": "webpack -p",
     "lint": "node_modules/.bin/esw webpack.config.* src --color",
     "lint:watch": "yarn run lint -- --watch",
-    "test": "yarn jest"
+    "unit": "yarn jest",
+    "unit-watch": "yarn unit --watch"
   },
   "keywords": [
     "es6"
@@ -37,6 +38,7 @@
     "eslint-plugin-standard": "4.0.1",
     "eslint-watch": "^7.0.0",
     "jest": "^26.4.2",
+    "jest-transform-stub": "^2.0.0",
     "npm-run-all": "^4.0.2",
     "raw-loader": "^4.0.1",
     "sass": "^1.26.10",

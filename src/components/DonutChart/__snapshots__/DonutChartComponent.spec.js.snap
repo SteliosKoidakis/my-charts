@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given component DonutChartComponent Given method renderTemplate When is called Then it should render the correct template 1`] = `
+"
+      <div class=\\"DonutChartComponent\\">
+        <div div=\\"\\" class=\\"DonutChartComponent__donut donutChart\\">
+          <div class=\\"DonutChartComponent__line-chart lineChart\\">
+            <strong class=\\"DonutChartComponent__title\\"></strong>
+            <strong class=\\"DonutChartComponent__total\\">0</strong>
+          </div>
+        </div>
+        <div class=\\"DonutChartComponent__info\\">
+          <div class=\\"DonutChartComponent__tablet-info\\">
+            <strong style=\\"color:null\\">Tablet</strong>
+            <div>
+              <span>0% </span>
+              <span class=\\"DonutChartComponent__value\\">0</span>
+             </div>
+          </div>
+          <div>
+             <strong style=\\"color: \\">Smartphone</strong>
+             <div>
+              <span>0% </span>
+              <span class=\\"DonutChartComponent__value\\">0</span>
+             </div>
+          </div>
+        </div>
+      </div>
+    "
+`;
