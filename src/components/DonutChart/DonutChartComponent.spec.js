@@ -2,14 +2,14 @@ import DonutChartComponent from './DonutChartComponent';
 import {
   renderStyles,
   renderDonutChart,
-  renderLinarChart,
+  renderLineChart,
 } from '~/utils';
 
 jest.mock('~/utils', () => ({
   formatNumber: jest.fn(),
   renderStyles: jest.fn(),
   renderDonutChart: jest.fn(),
-  renderLinarChart: jest.fn(),
+  renderLineChart: jest.fn(),
 }));
 
 describe('Given component DonutChartComponent', () => {
@@ -179,19 +179,19 @@ describe('Given component DonutChartComponent', () => {
           },
         });
       });
-      it('And it should trigger renderLinarChart with the correct parameter', async () => {
+      it('And it should trigger renderLineChart with the correct parameter', async () => {
         const data = '1,2,3';
         wrapper.setAttribute('data', data);
         wrapper.setAttribute('title', 'Title');
         wrapper.setAttribute('smartphoneColor', 'smartphoneColor');
         await wrapper.connectedCallback();
-        expect(renderLinarChart).toHaveBeenCalledWith({
+        expect(renderLineChart).toHaveBeenCalledWith({
           data: data.split(','),
           color: 'smartphoneColor',
           element: {
             shadow: wrapper.shadow,
             class: 'lineChart',
-            backgroundClass: 'DonutChartComponent__background-title',
+            backgroundClass: 'DonutChartComponent__background__title',
           },
         });
       });

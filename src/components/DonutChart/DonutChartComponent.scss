@@ -1,4 +1,5 @@
 .DonutChartComponent {
+  $blockClass: &;
   position: relative;
   
   &__donut {
@@ -33,19 +34,68 @@
     justify-content: space-between;
   }
 
+  &__tablet-info {
+    text-align: left;
+  }
+
+  &__smartphone-info {
+    text-align: right;
+  }
+
   &__value {
     color: lightgrey;
   }
+
   &__background {
 
-    &-revenue {
+    &__revenue {
       fill: #e4fcde;
     }
-    &-impresions {
+  
+    &__impressions {
       fill: #dbfdff;
     }
-    &-visits {
+  
+    &__visits {
       fill: #fff0ed;
     }
+  }
+
+  &--revenue {
+  
+    #{$blockClass}__tablet-text {
+      color: #44DF22;
+    }
+  
+    #{$blockClass}__smartphone-text {
+      color: #38AF1E;
+    }
+  }
+
+  &--impressions {
+  
+    #{$blockClass}__tablet-text {
+      color: #4DD4DD;
+    }
+
+    #{$blockClass}__smartphone-text {
+      color: #2945BB;
+    }
+  }
+
+  &--visits {
+
+    #{$blockClass}__tablet-text {
+      color: #E5C839;
+    }
+
+    #{$blockClass}__smartphone-text {
+      color: #E55039;
+    }
+  }
+
+  &__tablet-text,
+  &__smartphone-text {
+    display: block;
   }
 }

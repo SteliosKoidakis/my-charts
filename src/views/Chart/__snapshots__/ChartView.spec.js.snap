@@ -5,14 +5,14 @@ exports[`Given component ChartView Given method renderTemplate When is called Th
     <div class=\\"ChartView\\">
       <div class=\\"ChartView__slides\\">
         <div class=\\"ChartView__item\\">
-          <donat-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" currency=\\"€\\" smartphonecolor=\\"#38AF1E\\" title=\\"REVENUE\\" tabletcolor=\\"#44DF22\\" total=\\"0\\">
-        </donat-chart-component></div>
+          <donut-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" currency=\\"€\\" smartphonecolor=\\"#38AF1E\\" title=\\"REVENUE\\" tabletcolor=\\"#44DF22\\" total=\\"0\\">
+        </donut-chart-component></div>
         <div class=\\"ChartView__item\\">
-          <donat-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" smartphonecolor=\\"#2945BB\\" title=\\"IMPRESIONS\\" tabletcolor=\\"#4DD4DD\\" total=\\"0\\">
-        </donat-chart-component></div>
+          <donut-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" smartphonecolor=\\"#2945BB\\" title=\\"impressions\\" tabletcolor=\\"#4DD4DD\\" total=\\"0\\">
+        </donut-chart-component></div>
         <div class=\\"ChartView__item\\">
-          <donat-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" smartphonecolor=\\"#E55039\\" title=\\"VISITS\\" tabletcolor=\\"#E5C839\\" total=\\"0\\">
-        </donat-chart-component></div>
+          <donut-chart-component data=\\"smartphonePercentage=NaN\\" tabletpercentage=\\"NaN\\" smartphone=\\"0\\" tablet=\\"0\\" smartphonecolor=\\"#E55039\\" title=\\"VISITS\\" tabletcolor=\\"#E5C839\\" total=\\"0\\">
+        </donut-chart-component></div>
       </div>
     </div>
       "

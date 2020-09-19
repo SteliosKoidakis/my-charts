@@ -19,8 +19,8 @@ describe('Given ChartModel class', () => {
       expect(wrapper.data).toStrictEqual([]);
     });
   });
-  describe('Give tabletPercentage getter', () => {
-    describe('Wehn is called', () => {
+  describe('Given tabletPercentage getter', () => {
+    describe('When is called', () => {
       it('Then it should return the correct percentage', () => {
         wrapper.tablet = 50;
         wrapper.total = 100;
@@ -28,7 +28,7 @@ describe('Given ChartModel class', () => {
       });
     });
   });
-  describe('Give smartphonePercentage getter', () => {
+  describe('Given smartphonePercentage getter', () => {
     describe('When is called', () => {
       it('Then it should return the correct percentage', () => {
         wrapper.smartphone = 50;
@@ -37,15 +37,15 @@ describe('Given ChartModel class', () => {
       });
     });
   });
-  describe('Give getChartData method', () => {
+  describe('Given getChartData method', () => {
     describe('When is called', () => {
-      it('Then it should trigger get method with url according to this.type', () => {
+      it('Then it should trigger the get method with url according to this.type', () => {
         wrapper.type = 'test';
         wrapper.getChartData();
         expect(get).toHaveBeenCalledWith('https://5f621d2789dbd70016e194ca.mockapi.io/chart/test');
       });
       describe('When http call returns an error', () => {
-        it('Then it should trigger _updateData method with [] parameter', async () => {
+        it('Then it should trigger _updateData method with [] as a parameter', async () => {
           get.mockImplementation(() => {
             throw new Error();
           });
@@ -65,7 +65,7 @@ describe('Given ChartModel class', () => {
       });
     });
   });
-  describe('Give _updateData method', () => {
+  describe('Given _updateData method', () => {
     describe('When is called with items parameter', () => {
       it('Then it should update the class properties correctly', () => {
         const data = {

@@ -1,11 +1,7 @@
 import {
   renderDonutChart,
-  renderLinarChart,
+  renderLineChart,
 } from './chartGenerators';
-
-jest.mock('d3-selection', () => ({
-  select: () => jest.fn(),
-}));
 
 describe('Given chartGenerators utils', () => {
   describe('Given renderDonutChart utility', () => {
@@ -20,12 +16,12 @@ describe('Given chartGenerators utils', () => {
       });
     });
   });
-  describe('Given renderLinarChart utility', () => {
+  describe('Given renderLineChart utility', () => {
     describe('When is called with undefined information parameter or information.element', () => {
       it('Then it should return undefined and code will not break', () => {
-        let result = renderLinarChart();
+        let result = renderLineChart();
         expect(result).toBeUndefined();
-        result = renderLinarChart({
+        result = renderLineChart({
           element: undefined,
         });
         expect(result).toBeUndefined();

@@ -1,5 +1,5 @@
 import ChartView from './ChartView';
-import ChartModel from '~/model/Chart/ChartModel';
+import { ChartModel } from '~/models';
 import { renderStyles } from '~/utils';
 
 jest.mock('~/utils', () => ({
@@ -15,8 +15,8 @@ describe('Given component ChartView', () => {
     it('Then revenewChart should be an instance of ChartModel("revenewChart")', () => {
       expect(wrapper.revenewChart).toMatchObject(new ChartModel('revenewChart'));
     });
-    it('And impresionsChart should be an instance of ChartModel("impresionsChart")', () => {
-      expect(wrapper.impresionsChart).toMatchObject(new ChartModel('impresionsChart'));
+    it('And impressionsChart should be an instance of ChartModel("impressionsChart")', () => {
+      expect(wrapper.impressionsChart).toMatchObject(new ChartModel('impressionsChart'));
     });
     it('And visitsChart should be an instance of ChartModel("visitsChart")', () => {
       expect(wrapper.visitsChart).toMatchObject(new ChartModel('visitsChart'));
@@ -36,13 +36,13 @@ describe('Given component ChartView', () => {
   });
   describe('Given method getChartsInformation', () => {
     describe('When is called', () => {
-      it('Then it should trigger revenewChart, impresionsChart and visitsChart getChartData method', async () => {
+      it('Then it should trigger revenewChart, impressionsChart and visitsChart getChartData method', async () => {
         wrapper.revenewChart.getChartData = jest.fn();
-        wrapper.impresionsChart.getChartData = jest.fn();
+        wrapper.impressionsChart.getChartData = jest.fn();
         wrapper.visitsChart.getChartData = jest.fn();
         await wrapper.getChartsInformation();
         expect(wrapper.revenewChart.getChartData).toHaveBeenCalled();
-        expect(wrapper.impresionsChart.getChartData).toHaveBeenCalled();
+        expect(wrapper.impressionsChart.getChartData).toHaveBeenCalled();
         expect(wrapper.visitsChart.getChartData).toHaveBeenCalled();
       });
     });

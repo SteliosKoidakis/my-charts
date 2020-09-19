@@ -1,6 +1,8 @@
-import ChartModel from '~/model/Chart/ChartModel';
+import { ChartModel } from '~/models';
 import { renderStyles } from '~/utils';
 import ChartViewStyles from './ChartView.scss';
+
+const COMPONENT_CLASS = 'ChartView';
 
 class ChartView extends HTMLElement {
   constructor() {
@@ -10,7 +12,7 @@ class ChartView extends HTMLElement {
     });
 
     this.revenewChart = new ChartModel('revenewChart');
-    this.impresionsChart = new ChartModel('impresionsChart');
+    this.impressionsChart = new ChartModel('impressionsChart');
     this.visitsChart = new ChartModel('visitsChart');
   }
 
@@ -22,16 +24,16 @@ class ChartView extends HTMLElement {
 
   async getChartsInformation() {
     await this.revenewChart.getChartData();
-    await this.impresionsChart.getChartData();
+    await this.impressionsChart.getChartData();
     await this.visitsChart.getChartData();
   }
 
   renderTemplate() {
     const template = `
-    <div class="ChartView">
-      <div class="ChartView__slides">
-        <div class="ChartView__item">
-          <donat-chart-component
+    <div class="${COMPONENT_CLASS}">
+      <div class="${COMPONENT_CLASS}__slides">
+        <div class="${COMPONENT_CLASS}__item">
+          <donut-chart-component
             data=${this.revenewChart.data}
             smartphonePercentage=${this.revenewChart.smartphonePercentage}
             tabletPercentage=${this.revenewChart.tabletPercentage}
@@ -44,21 +46,21 @@ class ChartView extends HTMLElement {
             total=${this.revenewChart.total}
           />
         </div>
-        <div class="ChartView__item">
-          <donat-chart-component
-            data=${this.impresionsChart.data}
-            smartphonePercentage=${this.impresionsChart.smartphonePercentage}
-            tabletPercentage=${this.impresionsChart.tabletPercentage}
-            smartphone=${this.impresionsChart.smartphone}
-            tablet=${this.impresionsChart.tablet}
+        <div class="${COMPONENT_CLASS}__item">
+          <donut-chart-component
+            data=${this.impressionsChart.data}
+            smartphonePercentage=${this.impressionsChart.smartphonePercentage}
+            tabletPercentage=${this.impressionsChart.tabletPercentage}
+            smartphone=${this.impressionsChart.smartphone}
+            tablet=${this.impressionsChart.tablet}
             smartphoneColor="#2945BB"
-            title="IMPRESIONS"
+            title="impressions"
             tabletColor="#4DD4DD"
-            total=${this.impresionsChart.total}
+            total=${this.impressionsChart.total}
           />
         </div>
-        <div class="ChartView__item">
-          <donat-chart-component
+        <div class="${COMPONENT_CLASS}__item">
+          <donut-chart-component
             data=${this.visitsChart.data}
             smartphonePercentage=${this.visitsChart.smartphonePercentage}
             tabletPercentage=${this.visitsChart.tabletPercentage}

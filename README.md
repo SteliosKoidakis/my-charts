@@ -8,9 +8,12 @@
     - [Unit tests output](#unit-tests-output)
     - [Coverage report](#coverage-report)
     - [Watch mode](#watch-mode)
+  - [Linters](#linters)
+    - [Linter report output](#linter-report-output)
+    - [Linter watch mode](#linter-watch-mode)
 
 ## General info
-This project is about a web application that display user statistic. Is been created with custom web components.
+This project is about a web application that display user statistics. Is been created with custom web components.
 
 ## Technologies
 Project is created with:
@@ -22,14 +25,13 @@ Project is created with:
 * Eslint(for development purposes)
 
 ## Setup
-To run this project, install it locally using yarn:
+To run this project, install it locally by using yarn:
 
 ```
 $ yarn install
 $ yarn start
 ```
 ## Test
-I focus mainly on unit testing, try to secure and "break" all my units. Jest is been used with vue-test-utils(Similar to Enzyme) to achieve this. 
 
 ### Unit tests output
 To run test information run the following command:
@@ -51,3 +53,18 @@ To run test on watch mode run the following command:
 ```
 $ yarn unit:coverage
 ```
+
+## Linters
+
+### Linter report output
+
+```
+$ yarn lint
+```
+
+### Linter watch mode
+
+```
+$ yarn lint:watch
+```
+

@@ -2,8 +2,8 @@
 
 exports[`Given component DonutChartComponent Given method renderTemplate When is called Then it should render the correct template 1`] = `
 "
-      <div class=\\"DonutChartComponent\\">
-        <div div=\\"\\" class=\\"DonutChartComponent__donut donutChart\\">
+      <div class=\\"DonutChartComponent DonutChartComponent--\\">
+        <div class=\\"DonutChartComponent__donut donutChart\\">
           <div class=\\"DonutChartComponent__line-chart lineChart\\">
             <strong class=\\"DonutChartComponent__title\\"></strong>
             <strong class=\\"DonutChartComponent__total\\">undefined</strong>
@@ -11,18 +11,14 @@ exports[`Given component DonutChartComponent Given method renderTemplate When is
         </div>
         <div class=\\"DonutChartComponent__info\\">
           <div class=\\"DonutChartComponent__tablet-info\\">
-            <strong style=\\"color:null\\">Tablet</strong>
-            <div>
-              <span>0% </span>
-              <span class=\\"DonutChartComponent__value\\">undefined</span>
-             </div>
+            <strong class=\\"DonutChartComponent__tablet-text\\">Tablet</strong>
+            <span>0%</span>
+            <span class=\\"DonutChartComponent__value\\">undefined</span>
           </div>
-          <div>
-             <strong style=\\"color: \\">Smartphone</strong>
-             <div>
-              <span>0% </span>
-              <span class=\\"DonutChartComponent__value\\">undefined</span>
-             </div>
+          <div class=\\"DonutChartComponent__smartphone-info\\">
+            <strong class=\\"DonutChartComponent__smartphone-text\\">Smartphone</strong>
+            <span>0%</span>
+            <span class=\\"DonutChartComponent__value\\">undefined</span>
           </div>
         </div>
       </div>

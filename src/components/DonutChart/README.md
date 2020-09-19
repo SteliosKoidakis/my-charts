@@ -4,7 +4,7 @@ Ui component responsible to render a donut and a liner chart.
 ## Usage
 ```javascript
 
-<donat-chart-component
+<donut-chart-component
   data=${this.revenewChart.data}
   smartphonePercentage=${this.revenewChart.smartphonePercentage}
   tabletPercentage=${this.revenewChart.tabletPercentage}
@@ -19,7 +19,7 @@ Ui component responsible to render a donut and a liner chart.
 ```
 
 
-### Props
+### Properties
 
 | Prop           | Description              |
 |---------------|--------------------------|

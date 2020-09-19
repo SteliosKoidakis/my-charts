@@ -13,6 +13,7 @@ const renderDonutChart = (information) => {
     tablet,
     element,
   } = information;
+
   if (!element) return;
 
   const data = [{
@@ -49,8 +50,7 @@ const renderDonutChart = (information) => {
     .value((d) => d.value)
     .sort(null);
 
-  const path = g // eslint-disable-line no-unused-vars
-    .selectAll('path')
+  g.selectAll('path')
     .data(pieItem(data))
     .enter()
     .append('g')
@@ -59,7 +59,7 @@ const renderDonutChart = (information) => {
     .attr('fill', (d, i) => color(i));
 };
 
-const renderLinarChart = (information) => {
+const renderLineChart = (information) => {
   if (!information) return;
 
   const {
@@ -108,5 +108,5 @@ const renderLinarChart = (information) => {
 
 export {
   renderDonutChart,
-  renderLinarChart
+  renderLineChart
 };
